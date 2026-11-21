@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0a1a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="GTA VI Story">
+<title>GTA VI Story Checklist</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>
+:root{--bg:#0d0a1a;--card:#191330;--card2:#221a40;--pink:#ff4fa3;--orange:#ffb03b;--teal:#35e0d0;--txt:#f3eefc;--mut:#a99cc8;--red:#ff5b5b;--line:#2e2552}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body{background:radial-gradient(120% 60% at 50% -10%,#3a1350 0%,#1a0f33 45%,var(--bg) 80%) fixed;padding-bottom:calc(40px + env(safe-area-inset-bottom))}
+header{padding:calc(18px + env(safe-area-inset-top)) 16px 12px;position:sticky;top:0;z-index:5;background:linear-gradient(180deg,rgba(13,10,26,.97) 75%,rgba(13,10,26,0));backdrop-filter:blur(6px)}
+h1{margin:0;font-size:26px;letter-spacing:.5px;font-weight:900;background:linear-gradient(90deg,var(--pink),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);font-size:13px;margin-top:2px}
+.bar{height:10px;background:#2a2148;border-radius:99px;overflow:hidden;margin-top:8px}
+.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--orange));border-radius:99px;transition:width .3s}
+.overall{display:flex;justify-content:space-between;font-size:14px;margin-top:10px;font-weight:600}
+main{padding:0 12px;max-width:720px;margin:0 auto}
+.next{background:linear-gradient(135deg,#3b1450,#22183f);border:1px solid var(--pink);border-radius:16px;padding:14px;margin:6px 0 14px;box-shadow:0 0 24px rgba(255,79,163,.25)}
+.next .lab{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--pink);font-weight:800}
+.next .nm{font-size:20px;font-weight:800;margin:4px 0}
+.next button{margin-top:8px}
+details.ch{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:0 0 12px;overflow:hidden}
+details.ch>summary{list-style:none;padding:14px;cursor:pointer}
+details.ch>summary::-webkit-details-marker{display:none}
+.cht{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.cht b{font-size:17px}.cht span{color:var(--mut);font-size:13px;white-space:nowrap}
+.chn{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);font-weight:800}
+ul{list-style:none;margin:0;padding:0 8px 8px}
+li{display:flex;gap:12px;padding:12px 8px;border-top:1px solid var(--line);align-items:flex-start}
+li.cur{background:rgba(255,79,163,.12);border-radius:12px;border-top-color:transparent;outline:1px solid var(--pink)}
+li.done .mn{color:var(--mut);text-decoration:line-through}
+.cb{flex:0 0 30px;height:30px;border-radius:9px;border:2px solid var(--mut);background:transparent;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
+.cb svg{width:18px;height:18px;opacity:0}
+li.done .cb{background:linear-gradient(135deg,var(--pink),var(--orange));border-color:transparent}
+li.done .cb svg{opacity:1}
+.mb{flex:1;min-width:0}
+.mn{font-weight:700}.num{color:var(--orange);font-weight:800;margin-right:4px}
+.who{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:99px;margin-left:4px;vertical-align:2px}
+.w-Jason{background:#173b5a;color:#8cd2ff}.w-Lucia{background:#5a1740;color:#ffa3d4}.w-Both{background:#3d2f12;color:#ffd27a}.w-Not{background:#333;color:#bbb}
+.tip{color:var(--mut);font-size:14px;margin-top:3px}
+.flag{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;margin:5px 5px 0 0;letter-spacing:.3px}
+.f-save{background:#123d39;color:var(--teal)}.f-warn{background:#4a1616;color:#ff9c9c}.f-info{background:#2c2250;color:#cdbaff}
+.tools{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:6px}
+.tools h2{font-size:16px;margin:0 0 6px}
+.tools p{color:var(--mut);font-size:13px;margin:6px 0}
+button.b{background:var(--card2);color:var(--txt);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:15px;font-weight:600;cursor:pointer}
+button.p{background:linear-gradient(90deg,var(--pink),var(--orange));color:#1a0b1f;border:0}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+textarea{width:100%;background:#0f0b20;color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:10px;font:15px ui-monospace,Menlo,monospace;margin-top:8px}
+.msg{font-size:13px;color:var(--teal);min-height:18px;margin-top:6px}
+.legend{font-size:13px;color:var(--mut);margin:0 0 12px}
+footer{color:var(--mut);font-size:12px;text-align:center;margin:18px 12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>GTA VI · STORY MODE</h1>
+  <div class="sub">91 main missions · tap a box to tick · saves on this phone</div>
+  <div class="overall"><span id="ovTxt">0 / 91</span><span id="ovPct">0%</span></div>
+  <div class="bar"><i id="ovBar"></i></div>
+</header>
+<main>
+  <div id="next"></div>
+  <p class="legend">Tags: <span class="flag f-save">HARD SAVE</span> = make a manual save after this mission. <span class="flag f-warn">WARNING</span> = read before you start. Characters: Jason, Lucia, Both, or "Not confirmed" when sources don't say. "No verified tip yet" means there was no tip from two sources.</p>
+  <div id="chapters"></div>
+  <section class="tools">
+    <h2>Backup &amp; restore</h2>
+    <p>Your ticks are saved in this browser on this phone. To back them up or move them to another device, export a short code and keep it somewhere safe, for example in Notes.</p>
+    <div class="row"><button class="b p" id="exp">Export code</button><button class="b" id="imp">Import code</button><button class="b" id="clr">Reset all</button></div>
+    <textarea id="code" rows="2" placeholder="Your code shows here. To restore, paste a code here and tap Import." autocomplete="off" autocapitalize="off" spellcheck="false"></textarea>
+    <div class="msg" id="msg"></div>
+  </section>
+  <footer>Unofficial fan checklist. Mission list cross-checked across post-launch guides (Nov 19, 2026 or later). Some sources list 93 missions because they count 2 optional ones; this app lists only the 91 main missions. Works offline after the first load.</footer>
+</main>
+<script>
+const DATA=[{"n": 1, "t": "Just Like Paradise", "m": [{"id": "1.1", "n": "Prologue", "c": "Lucia", "f": [], "t": "Lucia's opening. L3 runs, ✕ jumps, ◯ crouches."}, {"id": "1.2", "n": "Gone Fishing", "c": "Jason", "f": [], "t": "Smuggling run with Cal and Donnie. Paradise Taxi is in Contacts after this."}, {"id": "1.3", "n": "Gear Up", "c": "Jason", "f": [], "t": "Buy the Mediator ($450) or the Moreland 850 ($350). The fight outside is melee: ▢ punch, hold ✕ block, tap ✕ dodge."}, {"id": "1.4", "n": "Just a Scratch", "c": "Jason", "f": [], "t": "Joey resprays the Ganado free once; the stock engine costs $100."}, {"id": "1.5", "n": "Lab Fees", "c": "Jason", "f": [], "t": "Collect Brian's rent at the gift shop."}, {"id": "1.6", "n": "Unwanted Attention", "c": "Jason", "f": [], "t": "Recover a payment from the Hamlet impound with Cal."}, {"id": "1.7", "n": "Pipework", "c": "Jason", "f": [], "t": "Rent collection turns into repairs. Non-lethal choices push you toward a Professional profile."}, {"id": "1.8", "n": "Hey Arnold!", "c": "Jason", "f": [], "t": "Track down Brian's missing broker."}, {"id": "1.9", "n": "Island Dreams", "c": "Jason", "f": [], "t": "Shipwreck dive; opens Kenton's dives."}, {"id": "1.10", "n": "Feng Shui", "c": "Jason", "f": [], "t": "Prep for Lucia: fix the house, buy flowers, get her clothes."}, {"id": "1.11", "n": "Coming Home", "c": "Jason", "f": [], "t": "Pick Lucia up on time. With the prep done, she starts at Crazy in Love."}, {"id": "1.12", "n": "Buck Me", "c": "Both", "f": [], "t": "Unlocks BuckMe and RydeMe. Bank your cash from now on."}, {"id": "1.13", "n": "Clean Up After Donnie", "c": "Jason", "f": [], "t": "Follow a lost package's signal near Hamlet."}, {"id": "1.14", "n": "Down to Earth", "c": "Both", "f": [], "t": "Afterwards, accept Lucia's meditation (the trophy may be missable)."}, {"id": "1.15", "n": "Clear Skies", "c": "Jason", "f": [], "t": "Job with Donnie from Southwind."}, {"id": "1.16", "n": "Day Release", "c": "Both", "f": [], "t": "Party with Kat and Mattia at the Rusty Anchor."}, {"id": "1.17", "n": "Swamped", "c": "Jason", "f": [], "t": "Meet Brian at the marina, then go to the Kingfishers."}, {"id": "1.18", "n": "Don Gone", "c": "Jason", "f": [], "t": "Clear out Donnie's trailer."}, {"id": "1.19", "n": "Recalibration", "c": "Both", "f": ["CH1 WIPE: PREPARE FIRST", "HARD SAVE"], "t": "BEFORE starting: put up to $5k into Family Savings, spend the rest on guns, then hard save. Tourist Trap can start right after."}, {"id": "1.20", "n": "Tourist Trap", "c": "Both", "f": ["POINT OF NO RETURN"], "t": "You lose pocket cash, checking, the floor stash, the house and your cars."}, {"id": "1.21", "n": "Home Sweet Home", "c": "Lucia", "f": [], "t": "No free roam."}, {"id": "1.22", "n": "Discharge Time", "c": "Lucia", "f": ["HARD SAVE"], "t": "Ends the chapter; save afterwards."}]}, {"n": 2, "t": "Paradise Lost", "m": [{"id": "2.1", "n": "What's in the Bag?", "c": "Both", "f": [], "t": "Starlet Motel is your new safehouse."}, {"id": "2.2", "n": "Ambulance Chaser", "c": "Lucia", "f": [], "t": "Ditch the ambulance before the cops find it."}, {"id": "2.3", "n": "Just Moved In", "c": "Lucia", "f": [], "t": "Supplies from the Alpha store."}, {"id": "2.4", "n": "Girls' Trip", "c": "Lucia", "f": [], "t": "Painkillers for Jason."}, {"id": "2.5", "n": "Moses", "c": "Lucia", "f": [], "t": "Moses becomes your car fence and registration contact; Scooter Bros unlocks."}, {"id": "2.6", "n": "Daily Driver", "c": "Lucia", "f": [], "t": "Recover an '82 Canis Crawler. Garages (Vice City Real Estate) open after this."}, {"id": "2.7", "n": "Slam Dunk", "c": "Lucia", "f": [], "t": "Dunk's trailer."}, {"id": "2.8", "n": "Breakfast Run", "c": "Both", "f": [], "t": "Unlocks the Trust trophy."}, {"id": "2.9", "n": "Coffee Break", "c": "Both", "f": ["CHARACTER SWITCHING UNLOCKS"], "t": "Free switching from here: hold D-pad →, then R1 to swap."}, {"id": "2.10", "n": "Afternoon Delight", "c": "Both", "f": [], "t": "Vicki's robbery at Delights."}, {"id": "2.11", "n": "Checking Out", "c": "Both", "f": ["HARD SAVE"], "t": "You leave for Vice City. One guide (GTABase) says you need $15,000 first (unconfirmed, single source)."}]}, {"n": 3, "t": "Tits, Ass, Drug Money", "m": [{"id": "3.1", "n": "Welcome to Vice City", "c": "Both", "f": [], "t": "Bayside Apt 201 is your new place."}, {"id": "3.2", "n": "Dealer's Choice", "c": "Jason", "f": [], "t": ""}, {"id": "3.3", "n": "Meet the Heders", "c": "Both", "f": [], "t": ""}, {"id": "3.4", "n": "Dubious Provenance", "c": "Both", "f": [], "t": "Antique store in Capri."}, {"id": "3.5", "n": "Mami Knows Best", "c": "Lucia", "f": [], "t": ""}, {"id": "3.6", "n": "South Leonida Real Estate", "c": "Lucia", "f": [], "t": ""}, {"id": "3.7", "n": "Tyrone", "c": "Jason", "f": [], "t": ""}, {"id": "3.8", "n": "Here, Kitty Kitty", "c": "Jason", "f": [], "t": ""}, {"id": "3.9", "n": "Car Service", "c": "Lucia", "f": [], "t": "Check the car's security with WAiNK (hold D-pad ↑) first."}, {"id": "3.10", "n": "Top Billing", "c": "Both", "f": [], "t": ""}, {"id": "3.11", "n": "Boobie Time", "c": "Jason", "f": [], "t": ""}, {"id": "3.12", "n": "First Impressions", "c": "Both", "f": [], "t": ""}, {"id": "3.13", "n": "Caught Slipping", "c": "Both", "f": [], "t": "Starts automatically at the Bayside apartment. Use Focus (L3+R3) and shoot the thieves' legs."}, {"id": "3.14", "n": "Crosstown Traffic", "c": "Both", "f": [], "t": ""}, {"id": "3.15", "n": "Credit Check", "c": "Both", "f": [], "t": "Gets you the Dye Pack Jammer, so bank jobs start to pay."}, {"id": "3.16", "n": "Steal the Zorrusso for Randy", "c": "Both", "f": [], "t": ""}, {"id": "3.17", "n": "Sinfrontera National Bank", "c": "Both", "f": [], "t": ""}, {"id": "3.18", "n": "Security Expert", "c": "Both", "f": [], "t": ""}, {"id": "3.19", "n": "Ride or Die", "c": "Jason", "f": [], "t": ""}, {"id": "3.20", "n": "Company Property", "c": "Both", "f": [], "t": ""}, {"id": "3.21", "n": "The Missing Link", "c": "Lucia", "f": [], "t": ""}, {"id": "3.22", "n": "Safe Word", "c": "Lucia", "f": [], "t": "Learn safe-cracking."}, {"id": "3.23", "n": "Cooties", "c": "Lucia", "f": [], "t": ""}, {"id": "3.24", "n": "Bricked Up", "c": "Both", "f": [], "t": ""}, {"id": "3.25", "n": "Hidden Charges", "c": "Both", "f": [], "t": ""}, {"id": "3.26", "n": "The Cartel Heist", "c": "Both", "f": ["HARD SAVE"], "t": "Ends the chapter (Break the Bank trophy). Save afterwards."}]}, {"n": 4, "t": "Vice City, Baby", "m": [{"id": "4.1", "n": "Ocean Beach", "c": "Both", "f": [], "t": "Room 701 at the Y is your new base."}, {"id": "4.2", "n": "Another Life", "c": "Lucia", "f": [], "t": ""}, {"id": "4.3", "n": "Company Cars", "c": "Both", "f": [], "t": ""}, {"id": "4.4", "n": "Lawyer Up", "c": "Both", "f": [], "t": ""}, {"id": "4.5", "n": "Party Hard", "c": "Both", "f": [], "t": ""}, {"id": "4.6", "n": "Heavy Lifting", "c": "Both", "f": [], "t": ""}, {"id": "4.7", "n": "Photo/Shoot", "c": "Both", "f": [], "t": ""}, {"id": "4.8", "n": "Making Gainz", "c": "Lucia", "f": [], "t": ""}, {"id": "4.9", "n": "Watch It", "c": "Jason", "f": [], "t": ""}, {"id": "4.10", "n": "Cash Injections", "c": "Lucia", "f": [], "t": ""}, {"id": "4.11", "n": "Amateur Hour", "c": "Lucia", "f": [], "t": ""}, {"id": "4.12", "n": "Dirty Work", "c": "Both", "f": [], "t": ""}, {"id": "4.13", "n": "Too Much Baggage", "c": "Jason", "f": [], "t": "Order vs 4.14 differs between guides."}, {"id": "4.14", "n": "Adventures in Babysitting", "c": "Jason", "f": [], "t": ""}, {"id": "4.15", "n": "Fresh Evidence", "c": "Jason", "f": [], "t": ""}, {"id": "4.16", "n": "Power Play", "c": "Not confirmed", "f": [], "t": ""}, {"id": "4.17", "n": "Child's Play", "c": "Both", "f": [], "t": ""}, {"id": "4.18", "n": "Headliners", "c": "Both", "f": [], "t": ""}, {"id": "4.19", "n": "Close Surveillance", "c": "Jason", "f": [], "t": ""}, {"id": "4.20", "n": "Delivery Method", "c": "Jason", "f": [], "t": ""}, {"id": "4.21", "n": "Team Building", "c": "Lucia", "f": [], "t": ""}, {"id": "4.22", "n": "Fully Catered", "c": "Both", "f": [], "t": ""}, {"id": "4.23", "n": "VCIA Takedown", "c": "Both", "f": ["HARD SAVE"], "t": "Hi-Jacked trophy. Save afterwards."}, {"id": "4.24", "n": "Sunset", "c": "Both", "f": [], "t": ""}, {"id": "4.25", "n": "Starting from Zero", "c": "Both", "f": ["HARD SAVE"], "t": "Ends the chapter; save afterwards."}]}, {"n": 5, "t": "Top of the World, Ma", "m": [{"id": "5.1", "n": "Bird in the Hand", "c": "Both", "f": [], "t": ""}, {"id": "5.2", "n": "Taking Liberties", "c": "Not confirmed", "f": [], "t": ""}, {"id": "5.3", "n": "VC Baby", "c": "Not confirmed", "f": [], "t": ""}, {"id": "5.4", "n": "Doggie Bag", "c": "Not confirmed", "f": [], "t": ""}, {"id": "5.5", "n": "Operation Savage Glory", "c": "Not confirmed", "f": [], "t": ""}, {"id": "5.6", "n": "Protective Custody", "c": "Both", "f": ["HARD SAVE"], "t": "Save afterwards and keep this save."}, {"id": "5.7", "n": "The End of the Road", "c": "Both", "f": ["FINAL MISSION: SAVE FOR OTHER ENDINGS"], "t": "Make a SEPARATE manual save before starting. The ending depends on Family Savings, relationship, criminal profile and your choices. After the credits the game rewinds to before this mission so you can replay it; cheats and the 100% checklist unlock."}]}];
+const KEY='gta6-story-v1';
+const ALL=[];DATA.forEach(c=>c.m.forEach(m=>ALL.push(m.id)));
+let done=new Set();
+try{done=new Set(JSON.parse(localStorage.getItem(KEY)||'[]').filter(x=>ALL.includes(x)))}catch(e){}
+const open=new Set();
+function save(){try{localStorage.setItem(KEY,JSON.stringify([...done]))}catch(e){}}
+function cls(f){return /SAVE/.test(f)&&!/ENDINGS/.test(f)?'f-save':/WIPE|NO RETURN|FINAL/.test(f)?'f-warn':'f-info'}
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+const tick='<svg viewBox="0 0 24 24" fill="none" stroke="#1a0b1f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+function current(){return ALL.find(id=>!done.has(id))}
+function render(){
+  const cur=current();
+  const n=done.size,pct=Math.round(n/ALL.length*100);
+  ovTxt.textContent=n+' / '+ALL.length+' missions';ovPct.textContent=pct+'%';ovBar.style.width=pct+'%';
+  const curM=cur&&DATA.flatMap(c=>c.m.map(m=>({...m,ch:c}))).find(m=>m.id===cur);
+  document.getElementById('next').innerHTML=curM?`<div class="next"><div class="lab">Up next · Chapter ${curM.ch.n}</div><div class="nm"><span class="num">${curM.id}</span>${esc(curM.n)} <span class="who w-${curM.c.split(' ')[0]}">${curM.c}</span></div>${curM.f.map(f=>`<span class="flag ${cls(f)}">${esc(f)}</span>`).join('')}<div class="tip">${esc(curM.t||'No verified tip yet.')}</div><button class="b p" data-id="${curM.id}">Mark done ✓</button> <button class="b" id="jump">Show in list</button></div>`:`<div class="next"><div class="lab">Story complete</div><div class="nm">All 91 missions done 🎉</div><div class="tip">If you kept a save before The End of the Road, you can load it to see the other endings.</div></div>`;
+  let h='';
+  DATA.forEach(c=>{
+    const cd=c.m.filter(m=>done.has(m.id)).length,cp=Math.round(cd/c.m.length*100);
+    const hasCur=c.m.some(m=>m.id===cur);
+    const isOpen=open.has(c.n)||(hasCur&&!open.has('x'+c.n));
+    h+=`<details class="ch" data-ch="${c.n}" ${isOpen?'open':''}><summary><div class="chn">Chapter ${c.n}${cd===c.m.length?' · complete':''}</div><div class="cht"><b>${esc(c.t)}</b><span>${cd}/${c.m.length}</span></div><div class="bar"><i style="width:${cp}%"></i></div></summary><ul>`;
+    c.m.forEach(m=>{
+      h+=`<li id="m${m.id.replace('.','-')}" class="${done.has(m.id)?'done':''} ${m.id===cur?'cur':''}"><button class="cb" data-id="${m.id}" aria-label="Toggle ${esc(m.n)}">${tick}</button><div class="mb"><div class="mn"><span class="num">${m.id}</span>${esc(m.n)} <span class="who w-${m.c.split(' ')[0]}">${m.c}</span></div>${m.f.map(f=>`<span class="flag ${cls(f)}">${esc(f)}</span>`).join('')}<div class="tip">${esc(m.t||'No verified tip yet.')}</div></div></li>`;
+    });
+    h+='</ul></details>';
+  });
+  chapters.innerHTML=h;
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-id]');
+  if(b){const id=b.dataset.id;done.has(id)?done.delete(id):done.add(id);save();render();return}
+  if(e.target.id==='jump'){const c=current();const el=c&&document.getElementById('m'+c.replace('.','-'));if(el)el.scrollIntoView({behavior:'smooth',block:'center'})}
+});
+document.addEventListener('toggle',e=>{const d=e.target;if(!d.dataset||!d.dataset.ch)return;const n=+d.dataset.ch;if(d.open){open.add(n);open.delete('x'+n)}else{open.delete(n);open.add('x'+n)}},true);
+// Export code: one bit per mission -> base64url, prefixed GTA6-
+function toCode(){const bytes=new Uint8Array(Math.ceil(ALL.length/8));ALL.forEach((id,i)=>{if(done.has(id))bytes[i>>3]|=1<<(i&7)});return 'GTA6-'+btoa(String.fromCharCode(...bytes)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
+function fromCode(s){s=s.trim().replace(/^GTA6-/i,'').replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';const bin=atob(s);if(bin.length!==Math.ceil(ALL.length/8))throw 0;const set=new Set();ALL.forEach((id,i)=>{if(bin.charCodeAt(i>>3)&(1<<(i&7)))set.add(id)});return set}
+exp.onclick=async()=>{const c=toCode();code.value=c;try{await navigator.clipboard.writeText(c);msg.textContent='Code copied: '+c}catch(e){code.select();msg.textContent='Code shown above. Long-press it to copy.'}};
+imp.onclick=()=>{try{const s=fromCode(code.value);if(!confirm('Replace your current ticks with this code ('+s.size+' missions done)?'))return;done=s;save();render();msg.textContent='Progress restored: '+s.size+' missions done.'}catch(e){msg.textContent='That code didn\u2019t work. Check that you pasted all of it (it starts with GTA6-).'}};
+clr.onclick=()=>{if(confirm('Clear ALL ticks? Export a code first if you might want them back.')){done=new Set();save();render();msg.textContent='All ticks cleared.'}};
+render();
+if('serviceWorker' in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('sw.js').catch(()=>{})}
+</script>
+</body>
+</html>
